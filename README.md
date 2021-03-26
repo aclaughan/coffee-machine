@@ -11,7 +11,7 @@
 
 What would you like? (espresso/latte/cappuccino):
   > c
-a cappuccino costs 3.0
+a cappuccino costs $3.00
 Please insert some coins.
  3.00: How many quarters? 8
  1.00: How many dimes? 7

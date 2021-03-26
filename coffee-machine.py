@@ -104,7 +104,7 @@ def collect_coins( selection ):
             { "name": "nickles", "value": 5 },
             { "name": "pennies", "value": 1 }
         ]
-    print(f"a {selection} costs {cost}\nPlease insert some coins.")
+    print(f"a {selection} costs ${cost:0.2f}\nPlease insert some coins.")
 
     coins_total = 0
 
