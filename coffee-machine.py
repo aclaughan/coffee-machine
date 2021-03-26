@@ -74,10 +74,10 @@ def report():
     header('coffee machine report')
     print( \
         f" resources available:\n\n" \
-        f"  water {'.' * 23}{resources['water']:>5}ml\n" \
-        f"  milk {'.' * 24}{resources['milk']:>5}ml\n" \
-        f"  coffee {'.' * 22}{resources['coffee']:>5}g\n" \
-        f"  money {'.' * 23} {'$' + str(resources['money']):>5}\n"
+        f"  water {'.' * 24}{resources['water']:>4}ml\n" \
+        f"  milk {'.' * 25}{resources['milk']:>4}ml\n" \
+        f"  coffee {'.' * 23}{resources['coffee']:>5}g\n" \
+        f"  money {'.' * 24} ${resources['money']:1.2f}\n"
     )
 
 
@@ -89,7 +89,7 @@ def resources_available( drink ):
 
     for ingredient in ingredients:
         if resources[ingredient] < ingredients[ingredient]:
-            print(f"Sorry there is not enough {ingredient}" \
+            print(f"Sorry there is not enough {ingredient} " \
                   f"to make a {drink}.\n\nPlease select something else.")
             return False
     return True
@@ -104,14 +104,14 @@ def collect_coins( selection ):
             { "name": "nickles", "value": 5 },
             { "name": "pennies", "value": 1 }
         ]
-    print(f"a {selection} costs ${cost:0.2f}\nPlease insert some coins.")
+    print(f"A {selection} costs ${cost:0.2f}\nPlease insert some coins.")
 
     coins_total = 0
 
     while True:
         for coin in range(len(coins)):
             received = int(
-                input(f"{cost - coins_total:>5.2f}: How many {coins[coin]['name']}? "))
+                input(f"${cost - coins_total:>5.2f}: How many {coins[coin]['name']}? "))
 
             coins_total += (coins[coin]['value'] / 100) * received
             logging.info(
